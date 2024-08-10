@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-black dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <h1>つぶやきアプリ</h1><br>
@@ -16,7 +16,7 @@
             @csrf
             <label for="tweet-content">つぶやき</label>
             <span>140文字まで</span><br><br>
-            <textarea id="tweet-content" class="text-gray-900 w-full h-40 drak:text-blue-600" type="text" name="tweet" placeholder="つぶやきを入力"></textarea><br><br>
+            <textarea id="tweet-content" class="w-full h-40 type="text" name="tweet" placeholder="つぶやきを入力"></textarea><br><br>
             @error('tweet')
             <p style="color: red;">{{ $message }}</p>
             @enderror
