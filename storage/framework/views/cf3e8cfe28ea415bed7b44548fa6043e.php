@@ -44,7 +44,8 @@ unset($__errorArgs, $__bag); ?>
     <div>
     <?php $__currentLoopData = $tweets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $tweet): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
         <details>
-            <summary><?php echo e($tweet->content); ?></summary>
+            <summary><?php echo e($tweet->content); ?> BY <?php echo e($tweet->user->name); ?></summary>
+            <?php if(\Illuminate\Support\Facades\Auth::id() === $tweet->user_id): ?>
             <div>
                 <a href="<?php echo e(route('tweet.update.index', ['tweetId' => $tweet->id])); ?>">編集</a>
                 <form action="<?php echo e(route('tweet.delete', ['tweetId' => $tweet->id])); ?>" method="post">
@@ -53,7 +54,9 @@ unset($__errorArgs, $__bag); ?>
                     <button type="submit">削除</button>
                 </form>
             </div>
-
+            <?php else: ?>
+            編集できません
+            <?php endif; ?>
         </details>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>

@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Tweet\Update;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\Tweet;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
+use App\Services\TweetService;
+use Illuminate\Http\Request;
+use Symfony\Component\HttpKernel\Exception\AccessDeniedHttpException;
 
 class IndexController extends Controller
 {
