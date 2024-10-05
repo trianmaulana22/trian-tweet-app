@@ -1,3 +1,4 @@
+
 <?php if (isset($component)) { $__componentOriginal9ac128a9029c0e4701924bd2d73d7f54 = $component; } ?>
 <?php if (isset($attributes)) { $__attributesOriginal9ac128a9029c0e4701924bd2d73d7f54 = $attributes; } ?>
 <?php $component = App\View\Components\AppLayout::resolve([] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? (array) $attributes->getIterator() : [])); ?>
@@ -8,17 +9,16 @@
 <?php $attributes = $attributes->except(collect($constructor->getParameters())->map->getName()->all()); ?>
 <?php endif; ?>
 <?php $component->withAttributes([]); ?>
+
      <?php $__env->slot('header', null, []); ?> 
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             <?php echo e(__('投稿フォーム')); ?>
 
         </h2>
      <?php $__env->endSlot(); ?>
-
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-black dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
-                
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">              
             <div class="p-6 text-gray-900 dark:text-gray-100">
                 <h1>つぶやきアプリ</h1><br>
     <div>
@@ -26,7 +26,7 @@
             <?php echo csrf_field(); ?>
             <label for="tweet-content">つぶやき</label>
             <span>140文字まで</span><br><br>
-            <textarea id="tweet-content" class="text-gray-900 w-full h-40 drak:text-blue-600" type="text" name="tweet" placeholder="つぶやきを入力"></textarea><br><br>
+            <textarea id="tweet-content" class="w-full h-40 type="text" name="tweet" placeholder="つぶやきを入力"></textarea><br><br>
             <?php $__errorArgs = ['tweet'];
 $__bag = $errors->getBag($__errorArgs[1] ?? 'default');
 if ($__bag->has($__errorArgs[0])) :
@@ -53,6 +53,7 @@ unset($__errorArgs, $__bag); ?>
                     <button type="submit">削除</button>
                 </form>
             </div>
+
         </details>
     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
